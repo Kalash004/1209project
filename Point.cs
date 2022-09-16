@@ -13,6 +13,7 @@ namespace ConsoleApp1
         private int? z;
         Boolean isTriDimensional;
 
+
         public Point(int x, int y)
         {
             this.x = x;
