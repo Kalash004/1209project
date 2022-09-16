@@ -70,11 +70,11 @@ namespace _1209project
             //{
             //  return null;
             //}
-            if (this.first <= interval2.First && this.last <= interval2.Last)
+            if (this.first <= interval2.First && this.last <= interval2.Last && this.last >= interval2.First)
             {
                 return new Interval(interval2.First, this.last);
             }
-            else if (this.first >= interval2.First && this.last >= interval2.Last)
+            else if (this.first >= interval2.First && this.last >= interval2.Last && this.first <= interval2.Last) 
             {
                 return new Interval(this.first, interval2.Last);
             }
