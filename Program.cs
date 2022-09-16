@@ -11,6 +11,8 @@ class Program
         Interval inter3 = inter.findUnion(inter2);
         if (inter3 != null) Console.WriteLine(value: inter3.ToString());
         else Console.WriteLine("There was no intersections in interval");
+
+        Console.WriteLine(inter.isInInterval(40));
     }
 
 }

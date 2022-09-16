@@ -57,7 +57,7 @@ namespace _1209project
 
         public Boolean isInInterval(int value)
         {
-            if (value > this.first && value < this.last)
+            if (value >= this.first && value <= this.last)
             {
                 return true;
             }
