@@ -10,6 +10,7 @@ namespace _1209project
     {
         private int first;
         private int last;
+
         public Interval(int first, int last)
         {
             this.First = first;

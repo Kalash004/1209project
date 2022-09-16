@@ -10,8 +10,9 @@ namespace ConsoleApp1
     {
         private Point point1;
         private Point point2;
+        private Point point3;   
 
-        public Line(Point point1, Point point2)
+        public Line(Point point1, Point point2, )
         {
 
         }
