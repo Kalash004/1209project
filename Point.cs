@@ -62,17 +62,45 @@ namespace ConsoleApp1
             throw new ArgumentException("You cant add z dimension to this point because it is not Tri dimensional, you will have to recreate the point with z specified in constructor");
         }
 
-        public bool isTriDimensional()
+        public Boolean isTriDimensional()
         {
             return triDimensional;
+        }
+
+        public bool pointEquals(Point target)
+        {
+            bool result = true;
+            if (triDimensional)
+            {
+                if (this.x == target.x && this.y == target.y && this.z == target.z)
+                {
+                    return result;
+                }
+                else
+                {
+                    result = false;
+                }
+            }
+            else
+            {
+                if (this.x == target.x && this.y == target.y)
+                {
+                    return result;
+                }
+                else
+                {
+                    result = false;
+                }
+            }
+            return result;
         }
 
         public override string ToString()
         {
             if (!triDimensional)
             {
-               return String.Format("Point X : {0} Y : {1} Z : {2} ",this.x,this.y,this.z);
-            } 
+                return String.Format("Point X : {0} Y : {1} Z : {2} ", this.x, this.y, this.z);
+            }
             return String.Format("Point X : {0} Y : {1}", this.x, this.y);
         }
     }
