@@ -10,10 +10,16 @@ namespace ConsoleApp1
 {
     enum Triangle_Type
     {
-        Equilateral,
-        Isosceles,
-        Right_angled,
-        Scalene
+        Equilateral, // 3 equal sides
+        Isosceles, // 2 equal sides
+        Scalene // no equal sides
+    }
+
+    enum Triangle_Type_Angles
+    {
+        Right_angled, // one angle is 90 deg
+        Acute_angled, // all angles < 90 deg
+        Obtuse_angled // one angle is > 90 deg
     }
     internal class Triangle
     {
@@ -86,15 +92,22 @@ namespace ConsoleApp1
 
             // test
 
-
             double A = Math.Acos((Math.Pow(lb, 2) + Math.Pow(lc, 2) - Math.Pow(la, 2)) / (-2 * lb * lc));
             double B = Math.Acos((Math.Pow(la, 2) + Math.Pow(lc, 2) - Math.Pow(lb, 2)) / (-2 * la * lc));
             double C = Math.Acos((Math.Pow(la, 2) + Math.Pow(lb, 2) - Math.Pow(lc, 2)) / (-2 * la * lb));
-            angles[0] = A;
-            angles [1] = B;
-            angles [2] = C;
+
+
+            angles[0] = radToDeg(A);
+            angles [1] = radToDeg(B);
+            angles [2] = radToDeg(C);
 
             return angles;
+        }
+
+        public double radToDeg(double radians)
+        {
+            double degrees = (180 / Math.PI) * radians;
+            return (degrees);
         }
     }
 }
