@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 
 namespace ConsoleApp1
 {
@@ -25,6 +26,7 @@ namespace ConsoleApp1
 
         public Triangle(Point a, Point b, Point c)
         {
+            if (a.pointEquals(b) && a.pointEquals(c) && b.pointEquals(c)) throw new ArgumentException("Points cant have same coordinates"); 
             if (a.X == b.X && b.X == c.X || a.Y == b.Y && b.Y == c.Y)
             {
                 throw new ArgumentException("This triangle is impossible because it clips inside it self");
@@ -32,7 +34,6 @@ namespace ConsoleApp1
             this.a = a;
             this.b = b;
             this.c = c;
-
             this.lineA = new Line(b, c);
             this.lineB = new Line(c, a);
             this.lineC = new Line(a, b);
@@ -82,6 +83,8 @@ namespace ConsoleApp1
             double la = lineA.getLength();
             double lb = lineB.getLength();
             double lc = lineC.getLength();
+
+            // test
 
 
             double A = Math.Acos((Math.Pow(lb, 2) + Math.Pow(lc, 2) - Math.Pow(la, 2)) / (-2 * lb * lc));

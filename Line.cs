@@ -19,7 +19,7 @@ namespace ConsoleApp1
         {
             this.point1 = point1;
             this.point2 = point2;
-            if (point1.isTriDimensional == point2.isTriDimensional)
+            if (point1.isTriDimensional() == point2.isTriDimensional())
             {
                 triDimensional = point1.isTriDimensional();
             }

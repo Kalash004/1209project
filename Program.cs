@@ -18,12 +18,27 @@ class Program
 
         Line line = new Line(true);
         double length = line.getLength();
-        Console.WriteLine(length.ToString()); 
+        Console.WriteLine(length.ToString());
 
-        Line line2d = new Line(new Point(5,3),new Point(8,7,10));
-        double length2d = line2d.getLength();
-        Console.WriteLine(length2d.ToString());
+        try
+        {
+            Line line2d = new Line(new Point(5, 3), new Point(8, 7, 10));
+            double length2d = line2d.getLength();
+            Console.WriteLine(length2d.ToString());
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
 
+
+
+        Triangle tri = new Triangle(new Point(0, 0), new Point(5, 0), new Point(3, 3));
+        double[] angles = tri.findAngles();
+        for (int i = 0; i < angles.Length; i++)
+        {
+            Console.WriteLine(angles[i].ToString());
+        } 
     }
 
 }
