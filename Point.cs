@@ -11,7 +11,7 @@ namespace ConsoleApp1
         private int x;
         private int y;
         private int? z;
-        Boolean isTriDimensional;
+        private Boolean triDimensional;
 
 
         public Point(int x, int y)
@@ -19,14 +19,14 @@ namespace ConsoleApp1
             this.x = x;
             this.y = y;
             this.z = null;
-            isTriDimensional = false;
+            triDimensional = false;
         }
         public Point(int x, int y, int z)
         {
             this.x = x;
             this.y = y;
             this.z = z;
-            isTriDimensional = true;
+            triDimensional = true;
         }
 
         public int X
@@ -42,26 +42,34 @@ namespace ConsoleApp1
 
         public int? getZ()
         {
-            if (isTriDimensional)
+            if (triDimensional)
             {
-                return (int)z;
+                return z;
             }
-            throw new ArgumentException("This point isnt Tri dimensional, dimension Z doesnt exist");
-            return null;
+            else
+            {
+                throw new ArgumentException("This point isnt Tri dimensional, dimension Z doesnt exist");
+                return null;
+            }
         }
 
         public void setZ(int z)
         {
-            if (isTriDimensional)
+            if (triDimensional)
             {
                 this.z = z;
             }
             throw new ArgumentException("You cant add z dimension to this point because it is not Tri dimensional, you will have to recreate the point with z specified in constructor");
         }
 
+        public bool isTriDimensional()
+        {
+            return triDimensional;
+        }
+
         public override string ToString()
         {
-            if (!isTriDimensional)
+            if (!triDimensional)
             {
                return String.Format("Point X : {0} Y : {1} Z : {2} ",this.x,this.y,this.z);
             } 
