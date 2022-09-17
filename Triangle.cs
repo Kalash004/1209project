@@ -92,9 +92,9 @@ namespace ConsoleApp1
 
             // test
 
-            double A = Math.Acos((Math.Pow(lb, 2) + Math.Pow(lc, 2) - Math.Pow(la, 2)) / (-2 * lb * lc));
-            double B = Math.Acos((Math.Pow(la, 2) + Math.Pow(lc, 2) - Math.Pow(lb, 2)) / (-2 * la * lc));
-            double C = Math.Acos((Math.Pow(la, 2) + Math.Pow(lb, 2) - Math.Pow(lc, 2)) / (-2 * la * lb));
+            double A = Math.Acos((Math.Pow(lb, 2) + Math.Pow(lc, 2) - Math.Pow(la, 2)) / (2 * lb * lc));
+            double B = Math.Acos((Math.Pow(la, 2) + Math.Pow(lc, 2) - Math.Pow(lb, 2)) / (2 * la * lc));
+            double C = Math.Acos((Math.Pow(la, 2) + Math.Pow(lb, 2) - Math.Pow(lc, 2)) / (2 * la * lb));
 
 
             angles[0] = radToDeg(A);
@@ -106,7 +106,7 @@ namespace ConsoleApp1
 
         public double radToDeg(double radians)
         {
-            double degrees = (180 / Math.PI) * radians;
+            double degrees =  radians * (180 / Math.PI);
             return (degrees);
         }
     }
