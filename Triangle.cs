@@ -103,8 +103,8 @@ namespace ConsoleApp1
             for (int i = 0; i < angles.Length; i++)
             {
                 double current = angles[i];
-                if (current > 90) return type = Triangle_Type_Angles.Obtuse_angled;
-                if (current == 90) return type = Triangle_Type_Angles.Right_angled;     
+                if (Math.Round(current) > 90) return type = Triangle_Type_Angles.Obtuse_angled;
+                if (Math.Round(current) == 90) return type = Triangle_Type_Angles.Right_angled;
             }
             return type;
 
