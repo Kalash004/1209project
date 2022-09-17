@@ -5,6 +5,8 @@ class Program
 {
     public static void Main(string[] args)
     {
+
+        // interval
         Interval inter = new Interval(40, 70);
         Console.WriteLine(inter.ToString());
         Interval inter2 = new Interval(80, 10);
@@ -15,7 +17,7 @@ class Program
         Console.WriteLine(inter.isInInterval(40));
 
 
-
+        // linie
         Line line = new Line(true);
         double length = line.getLength();
         Console.WriteLine(length.ToString());
@@ -32,7 +34,7 @@ class Program
         }
 
 
-
+        // trojuhelnik
         Triangle tri = new Triangle(new Point(0, 0), new Point(5, 0), new Point(0, 5));
         double[] angles = tri.findAngles();
         for (int i = 0; i < angles.Length; i++)
@@ -52,7 +54,11 @@ class Program
             Obtuse_angled // one angle is > 90 deg
           */
 
-        
+
+        // potravina
+        Food food = new Food("Knedla","Nevim XD",0.100,241,null);
+        food.precentOf(1000);
+        Console.WriteLine(food.ToString());
 
     }
 
