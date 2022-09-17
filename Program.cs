@@ -1,4 +1,5 @@
 ﻿using _1209project;
+using ConsoleApp1;
 
 class Program
 {
@@ -11,8 +12,18 @@ class Program
         Interval inter3 = inter.findUnion(inter2);
         if (inter3 != null) Console.WriteLine(value: inter3.ToString());
         else Console.WriteLine("There was no intersections in interval");
-
         Console.WriteLine(inter.isInInterval(40));
+
+
+
+        Line line = new Line(true);
+        double length = line.getLength();
+        Console.WriteLine(length.ToString()); 
+
+        Line line2d = new Line(new Point(5,3),new Point(8,7,10));
+        double length2d = line2d.getLength();
+        Console.WriteLine(length2d.ToString());
+
     }
 
 }
